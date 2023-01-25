@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2E3348;" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.itog.Controller.InterfaceController">
+    <children>
+        <AnchorPane layoutY="82.0" prefHeight="318.0" prefWidth="600.0" style="-fx-background-color: #fafafa;">
+            <children>
+                <Button fx:id="personal_sotr" layoutX="14.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #f77111;" text="Редактировать личный кабинет" textAlignment="CENTER" textFill="WHITE" visible="false">
+                    <font>
+                        <Font name="Times New Roman" size="12.0" />
+                    </font>
+                </Button>
+            <Button fx:id="personal_client" layoutX="347.0" layoutY="244.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #f77111;" text="Редактировать личный кабинет" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="sotrd_redaction" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #f77111;" text="Редактировать сотрудников" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="redaction_bibl" layoutX="14.0" layoutY="139.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #f77111;" text="Редактировать библиотеку" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="client_redaction" layoutX="347.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #f77111;" text="Редактировать клиентов" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="redaction_zakaz" layoutX="347.0" layoutY="139.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #f77111;" text="Редактировать заказы" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="check_assortiment" layoutX="181.0" layoutY="139.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #f77111;" text="Просмотреть ассортимент" textAlignment="CENTER" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
+        <Label layoutX="164.0" layoutY="14.0" text="Ночное Чтиво" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="45.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
