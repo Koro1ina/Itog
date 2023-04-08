@@ -8,28 +8,43 @@ import java.io.FileReader;
 import java.io.Reader;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Properties;
 
 public class DatabaseHandler extends Configs {
     Connection dbConnection;
 
-    public Connection getDbConnection()
-            throws ClassNotFoundException, SQLException {
-        Properties properties = new Properties();
+    private Connection getDbConnection() throws ClassNotFoundException, SQLException {
+        Map<String, String> env = System.getenv();
+        String host = env.getOrDefault("DB_HOST", "localhost");;
+        String port = env.getOrDefault("DB_PORT", "3306");
+        String database = env.getOrDefault("DB_NAME", "user35");
+        String user = env.getOrDefault("DB_USER", "root");
+        String password = env.getOrDefault("DB_PASS", "root");
 
-        properties.setProperty("useUnicode", "true");
-        properties.setProperty("characterEncoding", "utf8");
-
-        String connectionString = "jdbc:mysql://" + dbHost + ":"
-                + dbPort + "/" + dbName;
+        String connectionUrl = String.format(
+                "jdbc:mysql://%s:%s/%s?serverTimezone=UTC",
+                host,
+                port,
+                database
+        );
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        dbConnection = DriverManager.getConnection(connectionString,
-                dbUser, dbPass);
-        return dbConnection;
 
+        if (dbConnection == null) {
+            dbConnection = DriverManager.getConnection(
+                    connectionUrl,
+                    user,
+                    password
+            );
+            System.out.println("Connected to database");
+        }
+
+
+        return dbConnection;
     }
+
 
     public void signUpUser(Client user) {
         String insert = "INSERT INTO " + Const.CLIENT_TABLE + "(" +
